@@ -132,7 +132,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 130520}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: c4b9b7bc956596e4597d9b1cfc4d367b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &11412228
@@ -149,6 +149,7 @@ MonoBehaviour:
   speed: -5
   explosion: {fileID: 182118, guid: 1efc4a6cc277c2f49804dfaae9a46849, type: 2}
   explosion_rocket: {fileID: 189640, guid: 4464fdbf28557944dbf342406d44f773, type: 2}
+  Playership: {fileID: 182310, guid: e724256d0aff1794482cbdd453a38c45, type: 2}
 --- !u!114 &11461838
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2373,6 +2374,10 @@ Prefab:
       propertyPath: explosion_rocket
       value: 
       objectReference: {fileID: 189640, guid: 4464fdbf28557944dbf342406d44f773, type: 2}
+    - target: {fileID: 0}
+      propertyPath: Playership
+      value: 
+      objectReference: {fileID: 182310, guid: e724256d0aff1794482cbdd453a38c45, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 182580}
