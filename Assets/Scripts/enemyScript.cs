@@ -1,11 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
+using SpaceShip;
 
 public class enemyScript : MonoBehaviour {
 
 	public float speed = -5;
 	public GameObject explosion;
 	public GameObject explosion_rocket;
+	public GameObject Playership;
 
 	// Use this for initialization
 	void Start () {
@@ -35,6 +37,9 @@ public class enemyScript : MonoBehaviour {
 		if (name == "spaceship") {
 			Destroy(gameObject);
 			Instantiate(explosion, transform.position, Quaternion.identity);
+			SpaceShip.SpaceShipScript local = Playership.GetComponent<SpaceShip.SpaceShipScript>();
+			local.PlayerHealth -= 20;
+			print (local.PlayerHealth);
 		}
 
 		if (name == "rocket(Clone)") {
