@@ -5,6 +5,7 @@ public class enemyScript : MonoBehaviour {
 
 	public float speed = -5;
 	public GameObject explosion;
+	public GameObject explosion_rocket;
 
 	// Use this for initialization
 	void Start () {
@@ -34,6 +35,12 @@ public class enemyScript : MonoBehaviour {
 		if (name == "spaceship") {
 			Destroy(gameObject);
 			Instantiate(explosion, transform.position, Quaternion.identity);
+		}
+
+		if (name == "rocket(Clone)") {
+			Destroy(gameObject);
+			Destroy(other.gameObject);
+			Instantiate(explosion_rocket, transform.position, Quaternion.identity);
 		}
 
 	}

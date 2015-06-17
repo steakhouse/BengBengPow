@@ -149,7 +149,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 6.57000017
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -264,7 +264,7 @@ Transform:
   m_GameObject: {fileID: 1699292551}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.32499933, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
@@ -336,7 +336,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1705144059}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -.100000001, y: -4, z: 0}
+  m_LocalPosition: {x: -.100000001, y: -5.57999992, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -354,6 +354,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   bullet: {fileID: 127418, guid: 1338db8ccbb3ec048acc826e673ced48, type: 2}
+  rocket: {fileID: 156366, guid: e62e17f76ac4ec149b5f32c0cef18337, type: 2}
 --- !u!61 &1705144064
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -431,7 +432,7 @@ Transform:
   m_GameObject: {fileID: 2006543934}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: .0299999993, y: 11.3400002, z: 0}
-  m_LocalScale: {x: 1.18234229, y: 1, z: 1}
+  m_LocalScale: {x: 2.73416281, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3

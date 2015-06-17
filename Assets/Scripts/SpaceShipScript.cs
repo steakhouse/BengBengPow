@@ -5,10 +5,11 @@ public class SpaceShipScript : MonoBehaviour {
 
 	public float speed;
 	public GameObject bullet;
+	public GameObject rocket;
 
 	// Use this for initialization
 	void Start () {
-	
+		//GetComponent<SpriteRenderer>().color = new Color (1f, 1f, 1f, 0.5f);
 	}
 	
 	// Update is called once per frame
@@ -16,6 +17,10 @@ public class SpaceShipScript : MonoBehaviour {
 
 		if (Input.GetKeyDown ("space")) {
 			Instantiate(bullet, transform.position, Quaternion.identity);
+		}
+
+		if (Input.GetKeyDown ("1")) {
+			Instantiate(rocket, transform.position, Quaternion.identity);
 		}
 	}
 
