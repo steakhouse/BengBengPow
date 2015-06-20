@@ -14,5 +14,6 @@ public class RestartGame : MonoBehaviour {
 
 	void RestartGameE(){ //Wird mittels SendMessage von GUI getriggert!
 		Application.LoadLevel ("MainScene");
+		Time.timeScale = 1f;
 	}
 }
