@@ -71,12 +71,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d79901d509cf60c43bb83c86d4ad0c3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  score: 0
   speed: 5
+  energy: 100
+  energy_rate: 5
   bullet: {fileID: 127418, guid: 1338db8ccbb3ec048acc826e673ced48, type: 2}
   rocket: {fileID: 156366, guid: e62e17f76ac4ec149b5f32c0cef18337, type: 2}
   PlayerHealth: 100
+  RocketTimeout: 3
   RocketUI: {fileID: 0}
-  RocketTimeout: 0
+  HealthBar: {fileID: 0}
+  EnergyBar: {fileID: 0}
+  ScoreText: {fileID: 0}
+  GameOverScreen: {fileID: 0}
 --- !u!212 &21267814
 SpriteRenderer:
   m_ObjectHideFlags: 1

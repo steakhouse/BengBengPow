@@ -7,14 +7,18 @@ public class enemyScript : MonoBehaviour {
 	public float speed = -5;
 	public GameObject explosion;
 	public GameObject explosion_rocket;
-	public GameObject Playership;
+	private SpaceShipScript Playership;
 
 	// Use this for initialization
 	void Start () {
+		//Spawnt Enemy
 		Vector2 EnemyVelocity = new Vector2 (0, speed); 
 		GetComponent<Rigidbody2D>().velocity = EnemyVelocity;
 		GetComponent<Rigidbody2D> ().angularVelocity = Random.Range (-200, 200);
 		Destroy(gameObject, 5);
+
+		//Spieler finden
+		Playership = GameObject.Find ("spaceship").GetComponent<SpaceShipScript> ();
 	}
 	
 	// Update is called once per frame
@@ -32,20 +36,20 @@ public class enemyScript : MonoBehaviour {
 			Destroy(gameObject);
 			Destroy(other.gameObject);
 			Instantiate(explosion, transform.position, Quaternion.identity);
+			Playership.score += 10;
 		}
 
 		if (name == "spaceship") {
 			Destroy(gameObject);
 			Instantiate(explosion, transform.position, Quaternion.identity);
-			SpaceShip.SpaceShipScript local = Playership.GetComponent<SpaceShip.SpaceShipScript>();
-			local.PlayerHealth -= 20;
-			print (local.PlayerHealth);
+			Playership.PlayerHealth -= 10;
 		}
 
 		if (name == "rocket(Clone)") {
 			Destroy(gameObject);
 			Destroy(other.gameObject);
 			Instantiate(explosion_rocket, transform.position, Quaternion.identity);
+			Playership.score += 30;
 		}
 
 	}
