@@ -20,7 +20,7 @@ public class enemyScript : MonoBehaviour {
 		//Spieler finden
 		Playership = GameObject.Find ("spaceship").GetComponent<SpaceShipScript> ();
 	}
-	
+	 
 	// Update is called once per frame
 	void Update () {
 	
@@ -42,7 +42,9 @@ public class enemyScript : MonoBehaviour {
 		if (name == "spaceship") {
 			Destroy(gameObject);
 			Instantiate(explosion, transform.position, Quaternion.identity);
-			Playership.PlayerHealth -= 10;
+			if(Playership.ShieldReady){
+				Playership.PlayerHealth -= 10;
+			}
 		}
 
 		if (name == "rocket(Clone)") {

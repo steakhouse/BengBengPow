@@ -21,12 +21,19 @@ namespace SpaceShip{
 		private bool RocketReady = true;
 		public int RocketTimeout;
 
+		//Schild-Eigenschaften
+		public bool ShieldReady = true;	//Schild wieder bereit?
+		public int ShieldTimeout;			//SchildTimeout
+		public GameObject ShieldCom;		//GameObject Shield
+
 		//UI Elemente
 		public GameObject RocketUI;			//Rakete auf Bildschirm
+		public GameObject ShieldUI;			//Schild auf Bildschirm
 		public GameObject HealthBar;		//Lebensanzeige bzw. Schiffs-Schilde
 		public GameObject EnergyBar;		//Energie-Bar für aktuellen Energie-Stand
 		public GameObject ScoreText;		//Highscore-Anzeige
 		public GameObject GameOverScreen;	//Gameover-Screen
+
 
 		// Use this for initialization
 		void Start () {
@@ -55,7 +62,20 @@ namespace SpaceShip{
 				}
 			}
 
+			if (Input.GetKeyDown ("2")) {
+				if(ShieldReady && energy - 40 > 0){
+					ShieldReady = false;
+					energy -= 40;
+					ShieldCom.SetActive(true);
+
+					ShieldUI.GetComponent<Image>().color = new Color (1f, 1f, 1f, 0.3f);	//Schild-UI transparent machen
+					ShieldUI.GetComponent<Image>().fillAmount = 0.01f;						//Kreis-Runde Darstellung Schild-Icon
+					InvokeRepeating("EnableShield", ShieldTimeout, 0);						//Co-Routine starten
+				}
+			}
+
 			AnimateRocketBar ();
+			AnimiateShieldBar ();
 			ShieldUpdate ();
 			ScoreUpdate ();
 		}
@@ -77,6 +97,20 @@ namespace SpaceShip{
 		void AnimateRocketBar(){
 			if (RocketUI.GetComponent<Image> ().fillAmount < 1) {
 				RocketUI.GetComponent<Image> ().fillAmount += 0.01f;
+			}
+		}
+
+		//Shield-Cooldown
+		void EnableShield(){
+			this.ShieldReady = true;
+			ShieldCom.SetActive (false);
+			ShieldUI.GetComponent<Image>().color = new Color (1f, 1f, 1f, 1f);
+		}
+
+		//Animiert ShieldBar
+		void AnimiateShieldBar(){
+			if (ShieldUI.GetComponent<Image> ().fillAmount < 1) {
+				ShieldUI.GetComponent<Image> ().fillAmount += 0.01f;
 			}
 		}
 
