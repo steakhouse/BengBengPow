@@ -4,7 +4,7 @@ using System.Collections;
 public class spawnScript : MonoBehaviour {
 
 	public GameObject enemy;
-	public int spawnTime = 2;
+	public float spawnTime = 2;
 
 	// Use this for initialization
 	void Start () {
@@ -17,10 +17,11 @@ public class spawnScript : MonoBehaviour {
 	}
 
 	void addEnemy() {
-		float x1 = transform.position.x - GetComponent<Renderer>().bounds.size.x/2;
-		float x2 = transform.position.x + GetComponent<Renderer>().bounds.size.x/2;
+		float left = Camera.main.ScreenToWorldPoint( new Vector3(80.0f, 0.0f, 0) ).x;
+		float right = Camera.main.ScreenToWorldPoint( new Vector3(Screen.width - 80, 0.0f, 0) ).x;
 
-		Vector2 spawnPoint = new Vector2 (Random.Range (x1, x2), transform.position.y);
+		Vector2 spawnPoint = new Vector2 (Random.Range (left, right), transform.position.y);
+
 		Instantiate(enemy, spawnPoint, Quaternion.identity);
 	}
 

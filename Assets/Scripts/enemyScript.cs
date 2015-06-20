@@ -27,7 +27,7 @@ public class enemyScript : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D other) {
-		print ("Kollision mit Objekt " + other.gameObject.name.ToString());
+		//print ("Kollision mit Objekt " + other.gameObject.name.ToString());
 
 		//Name des kollidierenden Objekts (Ey ALTER WER HAT MISCH DA ANGEFICKT!?)
 		string name = other.gameObject.name;
